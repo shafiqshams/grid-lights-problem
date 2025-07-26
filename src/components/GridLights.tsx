@@ -5,6 +5,10 @@ export const GridLights = () => {
       [1, 1, 1],
    ];
 
+   const activateCell = (index: number) => {
+      console.log("Cell clicked => ", index)
+   }
+
    return (
       <div className="container">
          <h1 className="headline">GridLights</h1>
@@ -13,6 +17,7 @@ export const GridLights = () => {
                return cell ?
                   <button
                      key={index}
+                     onClick={() => activateCell(index)}
                      className='cell'
                   /> : <span key={index} />
             })}
