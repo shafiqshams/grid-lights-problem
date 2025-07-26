@@ -11,8 +11,26 @@ export const GridLights = () => {
    const [isDeactivating, setIsDeactivating] = useState<boolean>(false);
 
    const activateCell = (index: number) => {
-      const newStack = [...stack, index];
+      const newStack = [...stack, index]
       setStack(newStack);
+      if (newStack.length === grid.flat().filter(val => val !== 0).length) {
+         setIsDeactivating(true);
+         deactivateCell();
+      }
+   }
+
+   const deactivateCell = () => {
+      const interval = setInterval(() => {
+         setStack(stack => {
+            const newStack = [...stack];
+            newStack.pop();
+            if (newStack.length === 0) {
+               setIsDeactivating(false);
+               clearInterval(interval);
+            }
+            return newStack;
+         });
+      }, 500);
    }
 
    return (
