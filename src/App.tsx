@@ -1,7 +1,9 @@
+import './App.css';
+import { GridLights } from "./components/GridLights";
 
 const App = () => {
   return (
-    <div>Hello World</div>
+    <GridLights />
   )
 }
 
