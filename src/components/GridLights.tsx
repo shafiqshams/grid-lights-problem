@@ -23,7 +23,7 @@ export const GridLights = () => {
                   <button
                      key={index}
                      onClick={() => activateCell(index)}
-                     className='cell'
+                     className={stack.includes(index) ? 'cell-activated' : 'cell'}
                   /> : <span key={index} />
             })}
          </div>

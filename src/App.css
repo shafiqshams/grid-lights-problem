@@ -28,3 +28,9 @@
   background-color: transparent;
   cursor: pointer;
 }
+
+.cell-activated {
+  height: 100px;
+  width: 100px;
+  background-color: #20B2AA;
+}
