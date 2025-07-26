@@ -8,6 +8,7 @@ export const GridLights = () => {
    ];
 
    const [stack, setStack] = useState<number[]>([]);
+   const [isDeactivating, setIsDeactivating] = useState<boolean>(false);
 
    const activateCell = (index: number) => {
       const newStack = [...stack, index];
