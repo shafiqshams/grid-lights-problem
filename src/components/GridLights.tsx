@@ -1,3 +1,5 @@
+import { useState } from "react"
+
 export const GridLights = () => {
    const grid = [
       [1, 1, 1],
@@ -5,8 +7,11 @@ export const GridLights = () => {
       [1, 1, 1],
    ];
 
+   const [stack, setStack] = useState<number[]>([]);
+
    const activateCell = (index: number) => {
-      console.log("Cell clicked => ", index)
+      const newStack = [...stack, index];
+      setStack(newStack);
    }
 
    return (
